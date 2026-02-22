@@ -1,6 +1,8 @@
 # Prerequisites
 build*/
 cmake-*/
+.idea/
+.vscode/
 
 *.d
 
