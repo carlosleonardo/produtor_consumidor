@@ -19,7 +19,6 @@ int main() {
             buffer.fila.push(i);
             std::cout << "Produzido " << i << std::endl;
             nao_vazio.notify_one();
-            l.unlock();
             std::this_thread::sleep_for(std::chrono::seconds(1));
         }
     });
@@ -33,7 +32,6 @@ int main() {
             buffer.fila.pop();
             std::cout << "Consumido " << item << std::endl;
             nao_cheio.notify_one();
-            l.unlock();
             std::this_thread::sleep_for(std::chrono::seconds(1));
         }
     });
